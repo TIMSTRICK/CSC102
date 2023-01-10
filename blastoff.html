@@ -1,0 +1,47 @@
+<!-- Timothy Strickland -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Countdown Timer</title>
+    <style>
+        .red-text {
+            color: red;
+            font-weight: bold;
+            font-size: x-large;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>UAT Space Program</h1>
+        <img src="https://synchronic.uat.edu/courses/5439/files/767997/preview" alt="UAT Space Program IMG">
+      </header>
+    <div id="output"></div>
+
+    <script>
+        // Initialize the countdown variable to 50
+        let countdown = 50;
+        // Set an interval to call the countdownTimer function every 5 seconds
+        let timer = setInterval(countdownTimer, 5000);
+
+        function countdownTimer() {
+            // If the countdown variable is greater than 0, update the output
+            if (countdown > 0) {
+                // Get the current time and format it as a string
+                let currentTime = new Date();
+                let time = currentTime.toLocaleTimeString();
+                // Update the output with the current time and remaining seconds until launch
+                document.getElementById("output").innerHTML = "Current time: " + time + "<br>" + countdown + " seconds until launch";
+            } else {
+                // If the countdown has reached 0, clear the interval and update the output with "Blastoff!"
+                clearInterval(timer);
+                document.getElementById("output").innerHTML = "<span class='red-text'>Blastoff!</span>";
+            }
+            //Subtrat 5 from the countdown
+            countdown -= 5;
+        }
+        
+    </script>
+</body>
+</html>
