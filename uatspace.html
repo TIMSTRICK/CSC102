@@ -5,6 +5,15 @@
 <html>
   <head>
     <title>UAT Space Program</title>
+    <script type="text/javascript">
+      /**
+       * Delay for a number of milliseconds
+       */
+      function sleep(delay) {
+        var start = new Date().getTime();
+        while (new Date().getTime() < start + delay);
+      }
+    </script> 
   </head>
   <body>
   <header>
@@ -24,6 +33,7 @@
   <p>Welcome to the first version of the UAT Space Program Assigment!</p>
   
   <script>
+    sleep(5000)
     alert("Hello! You have reached my Website");
     document.write("Welcome to the journey of the UAT Space program! Let's make history together! ");
   </script>
