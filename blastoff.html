@@ -1,4 +1,7 @@
-<!-- Timothy Strickland -->
+<!-- 
+    Timothy Strickland
+    For Class CSC102 
+-->
 
 <!DOCTYPE html>
 <html>
@@ -16,7 +19,7 @@
     <header>
         <nav>
             <ul>
-              <li><a href="index.html">Home</a></li>
+              <li><a href="uatspace.html">Home</a></li>
               <li><a href="blastoff.html">Rocket Tracker</a></li>
               <li><a href="#">TBD</a></li>
               <li><a href="#">TBD</a></li>
@@ -29,26 +32,26 @@
     <div id="output"></div>
 
     <script>
-        // Initialize the countdown variable to 50
-        let countdown = 50;
+        // Initialize the currTime variable to 50
+        let currTime = 50;
         // Set an interval to call the countdownTimer function every 5 seconds
         let timer = setInterval(countdownTimer, 5000);
 
         function countdownTimer() {
-            // If the countdown variable is greater than 0, update the output
-            if (countdown > 0) {
+            // If the currTime variable is greater than 0, update the output
+            if (currTime > 0) {
                 // Get the current time and format it as a string
                 let currentTime = new Date();
                 let time = currentTime.toLocaleTimeString();
                 // Update the output with the current time and remaining seconds until launch
-                document.getElementById("output").innerHTML = "Current time: " + time + "<br>" + countdown + " seconds until launch";
+                document.getElementById("output").innerHTML = "Current time: " + time + "<br>" + currTime + " seconds until launch";
             } else {
-                // If the countdown has reached 0, clear the interval and update the output with "Blastoff!"
+                // If the currTime has reached 0, clear the interval and update the output with "Blastoff!"
                 clearInterval(timer);
                 document.getElementById("output").innerHTML = "<span class='red-text'>Blastoff!</span>";
             }
-            //Subtrat 5 from the countdown
-            countdown -= 5;
+            //Subtrat 5 from the currTime
+            currTime -= 5;
         }
         
     </script>
