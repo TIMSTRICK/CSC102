@@ -32,6 +32,35 @@ function play() {
     
 }
 
+function startBlastoff() {    
+    // Initialize the currTime variable to 50
+    let currTime = 50;
+    // Set an interval to call the countdownTimer function every 5 seconds
+    let timer = setInterval(countdownTimer, 1000);
+
+    function countdownTimer() {
+        // If the currTime variable is greater than 0, update the output
+        if (currTime > 0) {
+            // Get the current time and format it as a string
+            let currentTime = new Date();
+            let time = currentTime.toLocaleTimeString();
+            // Update the output with the current time and remaining seconds until launch
+            document.getElementById("output").innerHTML = "Current time: " + time + "<br>" + currTime + " seconds until launch";
+        } else {
+            // If the currTime has reached 0, clear the interval and update the output with "Blastoff!"
+            clearInterval(timer);
+            document.getElementById("output").innerHTML = "<span class='red-text'>Blastoff!</span>";
+            document.getElementById("announcements").innerHTML = " ";
+        }
+        //Check if the currTime variable is less than or equal to 25
+        if (currTime <= 25 && currTime > 0){
+            document.getElementById("announcements").innerHTML = "<br><h3>Warning Less than ½ way to launch, time left = " + currTime + "</h3><br>";
+        } 
+        //Subtrat 5 from the currTime
+        currTime -= 1;
+    }
+}
+
 // function that is called when the start button is clicked
 function startbuttonclick(){
     // currently empty and doesn't do anything
