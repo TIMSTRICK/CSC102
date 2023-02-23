@@ -32,7 +32,8 @@ function play() {
     
 }
 
-function startBlastoff() {    
+function startBlastoff() {  
+    document.getElementById("login_creds").innerText = " ";  
     // Initialize the currTime variable to 50
     let currTime = 50;
     // Set an interval to call the countdownTimer function every 5 seconds
@@ -61,11 +62,54 @@ function startBlastoff() {
     }
 }
 
+
+function login() {
+
+    document.getElementById("output").innerHTML = "<h3>Please Log in before starting the launch.</h3>"
+
+    document.getElementById("login_creds").innerHTML = "<form id=\"loginForm\"><div id=\"nameerror\"></div><label for=\"fname\">First Name:</label><br><input type=\"text\" id=\"fname\" name=\"fname\"><br><label for=\"lname\">Last Name:</label><br><input type=\"text\" id=\"lname\" name=\"lname\"><br><label for=\"badgenum\">Badge Number:</label><br><input type=\"text\" id=\"badgenum\" name=\"badgenum\"><br><div id=\"badgeerror\"></div><input type=\"submit\" value=\"Submit\" onclick=\"submit()\"><br></form>";
+
+    var canStart
+
+    // Get user inputs
+    firstName = document.getElementById("").value;
+    lastName = document.getElementById("").value;
+    badgeNumber = document.getElementById("").value;
+    
+    // Concatenate first and last name
+    fullName = firstName + " " + lastName;
+    
+    // Check if full name is valid
+    if (fullName.length > 20){
+        // Check if badge number is valid
+        if (isNaN(badgeNumber) || (badgeNumber > 999 || badgeNumber < 0)) {
+            document.getElementById("badgeerror").innerHTML = "Badge number must be a number with 3 or less digits. Please re-enter.";
+            canStart = false; 
+            return;         
+        } 
+        canStart = true;  
+    } else {
+        document.getElementById("nameerror").innerHTML = "Name is longer than 20 characters please try again"
+        canStart = false;  
+    }
+
+
+    function submit(){
+        if (canStart == false){
+            return;
+        } else {
+            // Call the startBlastoff() function
+            startBlastoff();
+        }
+    } 
+}
+
+
 // function that is called when the start button is clicked
 function startbuttonclick(){
     // currently empty and doesn't do anything
-}
 
+}
 // function that is called when the stop button is clicked
 function stopbuttonclick(){
     // currently empty and doesn't do anything
