@@ -64,13 +64,13 @@ function startBlastoff() {
 
 
 
-// function that is called when the start button is clicked
-function startbuttonclick(){
-    // currently empty and doesn't do anything
-
+function startButtonClicked() {
+    document.getElementById("start_button").disabled = true;
+    document.getElementById("stop_button").disabled = false;
 }
-// function that is called when the stop button is clicked
-function stopbuttonclick(){
-    // currently empty and doesn't do anything
+
+function stopButtonClicked() {
+    document.getElementById("stop_button").disabled = true;
+    document.getElementById("start_button").disabled = false;
 }
 

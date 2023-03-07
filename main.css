@@ -41,7 +41,43 @@ body {
     text-align: center;
 
 }
+
+  /* Tooltip */
+  .tooltip {
+    visibility: hidden;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5em;
+    background-color: #000;
+    color: #fff;
+    font-size: 0.8em;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  /* Show tooltip on hover */
+  a:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  /* Position tooltip arrow */
+  .tooltip:before {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    border: 8px solid transparent;
+    border-top: 8px solid #000;
+    transform: translateX(-50%);
+  }
+
   /* Style the nav */
+  
+
   nav ul {
     list-style-type: none;
     margin: 0;
@@ -59,27 +95,17 @@ body {
     display: block;
     width: 100px;
     height: 100px;
-    text-align: center;
-    text-decoration: none;
-    color: black;
     background-repeat: no-repeat;
     background-size: contain;
   }
-  
-  nav a.home {
-    background-image: url('home.png');
+
+  nav ul li a img {
+    width: 50px;
+    height: 50px;
+    align-items: center;
   }
+
+
   
-  nav a.rocket {
-    background-image: url('rocket.png');
-  }
-  
-  nav a.craps {
-    background-image: url('dice.png');
-  }
-  
-  nav a.tbd {
-    background-color: #999999;
-  }
  
   
