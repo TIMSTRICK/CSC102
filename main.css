@@ -1,0 +1,72 @@
+/* Set background colors */
+body {
+    background-color: #f0f0f0; /* light gray */
+    margin: 0;
+    height: 100%;
+  }
+  
+  .left {
+    background-color: #2d2d2d; /* dark gray */
+    width: 12.5%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  .right {
+    background-color: #2d2d2d; /* dark gray */
+    width: 12.5%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
+  .content {
+    width: 75%;
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    height: 100%;
+  }
+
+  /* Style the nav */
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  nav li {
+    display: inline-block;
+    margin: 5px;
+  }
+  
+  nav a {
+    display: block;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  
+  nav a.home {
+    background-image: url('home.png');
+  }
+  
+  nav a.rocket {
+    background-image: url('rocket.png');
+  }
+  
+  nav a.craps {
+    background-image: url('dice.png');
+  }
+  
+  nav a.tbd {
+    background-color: #999999;
+  }
