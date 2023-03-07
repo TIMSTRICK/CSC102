@@ -15,11 +15,8 @@
 				alert("Name is too long. Please try again.");
 				return;
 			}
-            // Get input value for badge number
-			let badgeNumberStr = prompt("Enter your badge number:");
-
             // Validate badge number
-            let badgeNumber = parseInt(badgeNumberStr);
+            let badgeNumber = document.getElementById("bdg_num").value;
             if (isNaN(badgeNumber) || badgeNumber >= 1000 || badgeNumber <= 0) {
                 alert("Badge number is invalid. Please try again.");
                 return;
@@ -33,37 +30,45 @@
 <body>
     <div class="left"></div>
     <div class="right"></div>
+    
+    <!-- Main Content -->
     <div class="content">
-    <header>
-        <nav>
-          <ul>
-            <li><a href="uatspace.html" class="home">Home</a></li>
-            <li><a href="login.html" class="rocket">Rocket Tracker</a></li>
-            <li><a href="craps.html" class="craps">Craps</a></li>
-            <li><a href="#" class="tbd">TBD</a></li>
-            <li><a href="#" class="tbd">TBD</a></li>
-          </ul>
-        </nav>
-        <h1>UAT Space Program Login</h1>
-        <img src="UATspaceLogo.jpg" alt="UAT Space Program IMG">
-      </header>
+        <header>
+            <nav>
+            <ul>
+                <li><a href="uatspace.html" class="home">Home</a></li>
+                <li><a href="login.html" class="rocket">Rocket Tracker</a></li>
+                <li><a href="craps.html" class="craps">Craps</a></li>
+                <li><a href="#" class="tbd">TBD</a></li>
+                <li><a href="#" class="tbd">TBD</a></li>
+            </ul>
+            </nav>
+            <h1>UAT Space Program Login</h1>
+            <img src="UATspaceLogo.jpg" alt="UAT Space Program IMG">
+        </header>
 
-	<form>
-		<label for="first_name">Enter your first name:</label>
-		<input type="text" id="first_name" name="first_name" required><br>
+        <form>
+            <label for="first_name">Enter your first name:</label>
+            <input type="text" id="first_name" name="first_name" required><br>
 
-		<label for="last_name">Enter your last name:</label>
-		<input type="text" id="last_name" name="last_name" required><br>
+            <label for="last_name">Enter your last name:</label>
+            <input type="text" id="last_name" name="last_name" required><br>
 
-		<center><button type="button" onclick="concatNames()">Submit</button></center>
-	</form>
+            <label for="bdg_num">Enter your badge number:</label>
+            <input type="number" id="bdg_num" name="bdg_num" required><br>
 
-	<p id="name_output"></p>
-</div>
+            <center><button type="button" onclick="concatNames()">Submit</button></center>
+        </form>
+
+        <p id="name_output"></p>
+
+
+        <!-- Bottom of Page -->
+        <div class="footer">
+            <h6><a href="https://www.flaticon.com/free-icons/nav" title="nav icons">Nav icons created by TravisAvery - Flaticon</a></h6>
+        </div>
+    </div>
+
 	
 </body>
-<footer>
-    <a href="https://www.flaticon.com/free-icons/nav" title="nav icons">Nav icons created by TravisAvery - Flaticon</a>
-
-</footer>
 </html>
