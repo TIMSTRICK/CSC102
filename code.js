@@ -74,3 +74,8 @@ function stopButtonClicked() {
     document.getElementById("start_button").disabled = false;
 }
 
+function playDice() {
+    var audio = new Audio('');
+    audio.play();
+  }
+
