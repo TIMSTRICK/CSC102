@@ -4,7 +4,21 @@
 	<title>Find My Satalite</title>
     <link rel="stylesheet" href="main.css">
     <script src="code.js"></script>
-    
+    <script src="launchDataDis.js"></script>
+    <script src="dataLoader.js"></script>
+    <script>
+        var theTime = new Date();
+        var tempTime = new Date();
+        var lastIteration = 0;
+        var time_interval = 5000;
+        var running = true;
+        var index = 0;
+        var timer;
+
+        //gets data into the array
+        var data = getData();
+
+    </script>
 </head>
 <body>
     <div class="left"></div>
@@ -48,75 +62,49 @@
         </ul>
       </nav>
         <h1>UAT Space Program</h1>
-        <img src="UATspaceLogo.jpg" alt="UAT Space Program IMG">
+        <img src="UAT_Space.jpg" alt="UAT Space Program IMG">
       </header>
       
-      <table>
-        <tr>
-            <th>Data Type</th>
-            <th>Reading</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>1</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>2</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>3</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>4</td>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>5</td>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>6</td>
-        </tr>
-        <tr>
-            <td>7</td>
-            <td>7</td>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>8</td>
-        </tr>
-        <tr>
-            <td>9</td>
-            <td>9</td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>10</td>
-        </tr>
-        <tr>
-            <td>11</td>
-            <td>11</td>
-        </tr>
-        <tr>
-            <td>12</td>
-            <td>12</td>
-        </tr>
-        <tr>
-            <td>13</td>
-            <td>13</td>
-        </tr>
-        <tr>
-            <td>14</td>
-            <td>14</td>
-        </tr>
-      </table>
-
+      <table id="data" border="2" width="70%">
+        <col style="width: 35%">
+        <col style="width: 35%">
+        <thead>
+            <th>
+                Data Type
+            </th>
+            <th>
+                Reading
+            </th>
+        </thead>
+        <tbody>
+            <tr id="seconds"></tr>
+            <tr id="latitude"></tr>
+            <tr id="longitude"></tr>
+            <tr id="gpsSensor_alt"></tr>
+            <tr id="bmpSensor_alt"></tr>
+            <tr id="bmpSensor_pres"></tr>
+            <tr id="bmpSensor_temp"></tr>
+            <tr id="digSensor_temp"></tr>
+            <tr id="cssSensor_temp"></tr>
+            <tr id="cssSensor_eCO2"></tr>
+            <tr id="cssSensor_TVOC"></tr>
+            <tr id="UV"></tr>
+            <tr id="accelX"></tr>
+            <tr id="accelY"></tr>
+            <tr id="accelZ"></tr>
+            <tr id="magneticX"></tr>
+            <tr id="magneticY"></tr>
+            <tr id="magneticZ"></tr>
+            <tr id="gyroX"></tr>
+            <tr id="gyroY"></tr>
+            <tr id="gyroZ"></tr>
+        </tbody>
+    </table>
+    The current time is: <div id="timeStamp">Press start for current time</div>
+    
         <br><br><br><br>
-    <button id="start_button" onclick="startButtonClicked()">Start</button>
-	<button id="stop_button" onclick="stopButtonClicked()" disabled>Stop</button>
+    <button id="start_button" onclick="start();">Start</button>
+	  <button id="stop_button" onclick="stop();" disabled>Stop</button>
 
      <!-- Bottom of Page --> 
     <div class="footer">

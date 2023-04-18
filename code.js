@@ -39,12 +39,18 @@ function startBlastoff() {
 
 
 
-function startButtonClicked() {
+function start(){
+    console.log("start() method started");
+    document.getElementById("data").rows["seconds"].innerHTML = "Reading Data";
+    index = 0;
+    timer = setInterval(updateDisplay, time_interval);
     document.getElementById("start_button").disabled = true;
     document.getElementById("stop_button").disabled = false;
 }
 
-function stopButtonClicked() {
+function stop(){
+    console.log("stop() method started");
+    clearInterval(timer);
     document.getElementById("stop_button").disabled = true;
     document.getElementById("start_button").disabled = false;
 }
